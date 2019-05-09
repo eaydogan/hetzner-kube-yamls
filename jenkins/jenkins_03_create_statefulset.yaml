@@ -23,7 +23,7 @@ spec:
       serviceAccountName: jenkins
       containers:
         - name: jenkins
-          image: $CONTAINER_IMAGE #registry.dev.qa.k8s.altorumleren.com/altorumleren/jenkins-demo:latest
+          image: $CONTAINER_IMAGE
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
