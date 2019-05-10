@@ -55,6 +55,8 @@ spec:
               mountPath: /var/jenkins_config
             - name: jenkins-home
               mountPath: /var/jenkins_home
+            - name: docker-sock
+              mountPath: /var/run
           livenessProbe:
             httpGet:
               path: /login
@@ -74,6 +76,9 @@ spec:
         - name: jenkins-configuration-as-code
           configMap:
             name: jenkins-configuration-as-code
+        - name: docker-sock
+          hostPath:
+            path: /var/run            
       imagePullSecrets:
       - name: myregistrykey2
   volumeClaimTemplates:
