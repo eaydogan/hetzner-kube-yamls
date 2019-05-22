@@ -9,8 +9,8 @@ data:
     KAFKA_BROKERS = "127.0.0.1:9092"
     CASSANDRA_NODES = "127.0.0.1"
   production.py: |
-    KAFKA_BROKERS = "$CLUSTER_NAME-headless.$CLUSTER_NAMESPACE.svc.cluster.local:9092"
-    CASSANDRA_NODES = "$CLUSTER_NAME.$CLUSTER_NAMESPACE.svc.cluster.local"
+    KAFKA_BROKERS = "$CLUSTER_NAME-kafka-headless.$CLUSTER_NAMESPACE.svc.cluster.local:9092"
+    CASSANDRA_NODES = "$CLUSTER_NAME-cassandra.$CLUSTER_NAMESPACE.svc.cluster.local"
   staging.py: |
-    KAFKA_BROKERS = "$CLUSTER_NAME-headless.$CLUSTER_NAMESPACE.svc.cluster.local:9092"
-    CASSANDRA_NODES = "$CLUSTER_NAME.$CLUSTER_NAMESPACE.svc.cluster.local"
+    KAFKA_BROKERS = "$CLUSTER_NAME-kafka-headless.$CLUSTER_NAMESPACE.svc.cluster.local:9092"
+    CASSANDRA_NODES = "$CLUSTER_NAME-cassandra.$CLUSTER_NAMESPACE.svc.cluster.local"
