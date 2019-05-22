@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: iot-backend-config
+data:
+  default.py: 'NOTIFY_MAIL_TO = "$NOTIFY_MAIL_TO" # For use in application
+    emails'
+  development.py: |
+    KAFKA_BROKERS = "127.0.0.1:9092"
+    CASSANDRA_NODES = "127.0.0.1"
+  production.py: |
+    KAFKA_BROKERS = "$CLUSTER_NAME-headless.$CLUSTER_NAMESPACE.svc.cluster.local:9092"
+    CASSANDRA_NODES = "$CLUSTER_NAME.$CLUSTER_NAMESPACE.svc.cluster.local"
+  staging.py: |
+    KAFKA_BROKERS = "$CLUSTER_NAME-headless.$CLUSTER_NAMESPACE.svc.cluster.local:9092"
+    CASSANDRA_NODES = "$CLUSTER_NAME.$CLUSTER_NAMESPACE.svc.cluster.local"
